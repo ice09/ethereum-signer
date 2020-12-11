@@ -1,4 +1,4 @@
-# Ethereum-Signer: Signing arbitrary messages Ethereum-compliant
+# Ethereum-Signer: Ethereum-compliant signing of arbitrary messages
 
 ## Run
 
