@@ -46,7 +46,7 @@ public class SigningController {
     public VerificationDto signMessage(@RequestParam String ethereumAddress, @RequestParam String message, @RequestParam String signature) {
         String recoveredAddress = "0x" +
             signatureService.ecrecoverAddress(
-                Hash.sha3(signatureService.createProof(Hash.sha3(message.getBytes(StandardCharsets.UTF_8)))),
+                Hash.sha3(signatureService.createProof(message.getBytes(StandardCharsets.UTF_8))),
                 Numeric.hexStringToByteArray(signature),
                 ethereumAddress
             );
