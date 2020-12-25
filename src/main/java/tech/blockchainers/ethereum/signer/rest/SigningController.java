@@ -35,6 +35,11 @@ public class SigningController {
         return new AccountDto("0x" + Hex.toHexString(signer.getEcKeyPair().getPrivateKey().toByteArray()), signer.getAddress());
     }
 
+    @GetMapping("/checksumAddress")
+    public String convertAddressToChecksumAddress(String address) {
+        return Keys.toChecksumAddress(address);
+    }
+
     @GetMapping("/signMessage")
     public SignatureDto signMessage(@RequestParam String privateKey, @RequestParam String message) {
         Credentials signer = Credentials.create(privateKey);
